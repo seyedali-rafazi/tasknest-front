@@ -15,7 +15,7 @@ function TextField({
 }) {
   return (
     <div className="w-full">
-      <label className="mb-2 block text-secondery-700" htmlFor={name}>
+      <label className="mb-2 block text-secondery-700 text-left" htmlFor={name}>
         {label} {required && <span className="text-error">*</span>}
       </label>
       <input

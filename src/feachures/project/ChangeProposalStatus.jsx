@@ -8,15 +8,15 @@ import Loading from "../../ui/Loading";
 
 const options = [
   {
-    label: "رد شده",
+    label: "Rejected",
     value: "0",
   },
   {
-    label: "در انتظار تایید",
+    label: "Awaiting approval",
     value: "1",
   },
   {
-    label: "تایید شده",
+    label: "Approved",
     value: "2",
   },
 ];
@@ -43,7 +43,7 @@ function ChangeProposalStatus({ proposalId, onClose }) {
       <form onSubmit={handleSubmit(onSubmit)}>
         <RHFSelect
           name="status"
-          label="تغییر وضعبت درخواست"
+          label="Change request status"
           register={register}
           required
           options={options}
@@ -53,7 +53,7 @@ function ChangeProposalStatus({ proposalId, onClose }) {
             <Loading />
           ) : (
             <button type="submit" className="btn btn--primary w-full">
-              تایید
+              Submit
             </button>
           )}
         </div>

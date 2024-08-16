@@ -41,7 +41,7 @@ function ProjectRow({ project, index }) {
           <TbPencilMinus className="icon icon--edit" />
         </button>
         <Modal
-          title={`ویرایش ${project.title}`}
+          title={`Edit ${project.title}`}
           open={isEditOpen}
           onClose={() => setIsEditOpen(false)}
         >
@@ -54,7 +54,7 @@ function ProjectRow({ project, index }) {
           <HiOutlineTrash className="icon icon--error" />
         </button>
         <Modal
-          title={`حذف ${project.title}`}
+          title={`Delete ${project.title}`}
           open={isDeleteOpen}
           onClose={() => setIsDeleteOpen(false)}
         >

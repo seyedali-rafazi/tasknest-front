@@ -5,9 +5,10 @@ function OrderSidebar() {
   return (
     <div className="flex flex-row justify-evenly lg:flex-col border border-secondery-200 rounded-lg shadow-sm overflow-x-scroll lg:overflow-x-hidden">
       <SidebarNavlink path="/order-project">
-        <span className="whitespace-nowrap ">ثبت پروژه جدید </span>
+        <span className="whitespace-nowrap "> New project registration</span>
       </SidebarNavlink>
-    </div>  )
+    </div>
+  );
 }
 
 export default OrderSidebar

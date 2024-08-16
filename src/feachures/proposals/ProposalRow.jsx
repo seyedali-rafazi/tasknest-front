@@ -7,15 +7,15 @@ import { truncateText } from "../../utils/truncateText";
 
 const statusStyle = [
   {
-    label: "رد شده",
+    label: "Rejected",
     className: "badge--danger",
   },
   {
-    label: "در انتظار تایید  ",
+    label: "Awaiting approval",
     className: "badge--secondary",
   },
   {
-    label: "تایید شده",
+    label: "Approved",
     className: "badge--success",
   },
 ];
@@ -26,7 +26,7 @@ function ProposalRow({ proposal, index }) {
     <Table.Row>
       <td>{index + 1}</td>
       <td>{truncateText(description, 60)}</td>
-      <td>{duration} روز</td>
+      <td>{duration} day</td>
       <td>{toNumbersWithComma(price)}</td>
       <td>
         {" "}

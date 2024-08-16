@@ -9,11 +9,11 @@ import CreateProposal from "./CreateProposal";
 
 const projectStatus = {
   OPEN: {
-    label: "باز",
+    label: "Open",
     className: "badge--success",
   },
   CLOSED: {
-    label: "بسته",
+    label: "Closed",
     className: "badge--danger",
   },
 };
@@ -36,7 +36,7 @@ function ProjectRow({ project, index }) {
         <Modal
           open={open}
           onClose={() => setOpen(false)}
-          title={`درخواست انجام پروژه ${title}`}
+          title={`Request to do the project ${title}`}
         >
           <CreateProposal
             projectId={project._id}

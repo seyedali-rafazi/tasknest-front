@@ -18,7 +18,7 @@ function UserFavouitProjects({ myFavourits, smOrder, mdOrder }) {
     return (
       <div className="flex justify-center">
         <p className="font-bold text-secondery-800">
-          هیچ پروژه مورد علاقه ای اضافه نکردید.
+          You have not added any favorite projects.
         </p>
       </div>
     );

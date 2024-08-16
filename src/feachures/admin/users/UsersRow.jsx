@@ -35,16 +35,14 @@ function UsersRow({ user, index }) {
         </span>
       </td>
       <td>
-        <Modal
-          title="تغییر وضعیت کاربر"
-          open={open}
-          onClose={() => setOpen(false)}>
+        <Modal title="Change User" open={open} onClose={() => setOpen(false)}>
           <ChangeUserStatus userId={user._id} onClose={() => setOpen(false)} />
         </Modal>
         <button
           className="hover:text-primary-600 transition-all duration-300"
-          onClick={() => setOpen(true)}>
-          تغییر وضعیت
+          onClick={() => setOpen(true)}
+        >
+          Change of status
         </button>
       </td>
     </Table.Row>

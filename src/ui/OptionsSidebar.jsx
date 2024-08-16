@@ -4,15 +4,15 @@ import useCategories from "../hooks/useCategory";
 
 const statusOptions = [
   {
-    label: "همه",
+    label: "All",
     value: "ALL",
   },
   {
-    label: "باز",
+    label: "Open",
     value: "OPEN",
   },
   {
-    label: "بسته",
+    label: "Closed",
     value: "CLOSED",
   },
 ];
@@ -21,13 +21,13 @@ function OptionsSidebar() {
   const { transformedCategories } = useCategories();
 
   return (
-    <div className="flex flex-col gap-8 p-5 border border-secondery-200 rounded-lg shadow-sm">
+    <div className="flex flex-col gap-8 p-5 border border-secondery-300 rounded-lg shadow-md">
       <FilterDropdown
         filterField="category"
         options={[
           {
             value: "",
-            label: " همه دسته بندی ها ",
+            label: "All Categories",
           },
           ...transformedCategories,
         ]}

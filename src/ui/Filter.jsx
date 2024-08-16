@@ -1,5 +1,4 @@
 import React from "react";
-import FilterDropdown from "./FilterDropdown";
 import { useSearchParams } from "react-router-dom";
 
 function Filter({ filterField, options }) {
@@ -12,7 +11,7 @@ function Filter({ filterField, options }) {
   }
   return (
     <div className="flex items-center gap-x-2 text-xs">
-      <span>وضعیت</span>
+      <span>Status</span>
       <div className="flex items-center gap-x-2 border border-secondery-100 bg-secondery-0  rounded-lg">
         {options.map(({ value, label }) => {
           const isActive = value == currentFilter;
@@ -25,7 +24,8 @@ function Filter({ filterField, options }) {
                 isActive
                   ? "!bg-primary-900 text-white"
                   : "bg-secondery-0 text-secondery-800"
-              }`}>
+              }`}
+            >
               {label}
             </button>
           );

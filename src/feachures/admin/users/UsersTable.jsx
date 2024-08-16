@@ -18,7 +18,7 @@ function UsersTable() {
   if (!users.length) {
     return (
       <div>
-        <Empty resourceName="هیچ کاربری یافت نشد" />
+        <Empty resourceName="No user found" />
       </div>
     );
   }
@@ -26,12 +26,12 @@ function UsersTable() {
     <Table>
       <Table.Header>
         <th>#</th>
-        <th>نام</th>
-        <th>ایمیل</th>
-        <th>شماره موبایل</th>
-        <th>نقش</th>
-        <th>وضعیت</th>
-        <th>عملیات</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phonw number</th>
+        <th>Role</th>
+        <th>Status</th>
+        <th>Operation</th>
       </Table.Header>
       <Table.Body>
         {users.map((user, index) => (

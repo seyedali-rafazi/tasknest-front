@@ -27,40 +27,40 @@ function CreateProposal({ onClose, projectId }) {
       <form className="space-y-8" onSubmit={handleSubmit(onSubmit)}>
         <TextField
           className="textfield__input"
-          label="توضیحات"
+          label="Description"
           name="description"
           register={register}
           required
           validationSchema={{
-            required: "توضیحات ضروری است",
+            required: "Description is required",
             minLength: {
               value: 10,
-              message: "حداقل 10 کاراکتر را وارد کنید",
+              message: "Enter at least 10 characters",
             },
           }}
           errors={errors}
         />
         <TextField
           className="textfield__input"
-          label="قیمت"
+          label="Price"
           name="price"
           register={register}
           required
           type="number"
           validationSchema={{
-            required: "قیمت ضروری است",
+            required: "Price is required",
           }}
           errors={errors}
         />
         <TextField
           className="textfield__input"
-          label="مدت زمان"
+          label="Duration"
           name="duration"
           register={register}
           required
           type="number"
           validationSchema={{
-            required: "مدت زمان ضروری است",
+            required: "Duration is required",
           }}
           errors={errors}
         />
@@ -69,7 +69,7 @@ function CreateProposal({ onClose, projectId }) {
             <Loading />
           ) : (
             <button type="submit" className="btn btn--primary w-full ">
-              تایید
+              Submit
             </button>
           )}
         </div>

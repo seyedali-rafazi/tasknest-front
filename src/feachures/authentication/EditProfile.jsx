@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-import RadioInputGroup from "../../ui/RadioInputGroup";
 import Loading from "../../ui/Loading";
 import useEditProfile from "./useEditProfile";
 import TextField from "../../ui/TextField";
@@ -41,12 +40,12 @@ function EditProfile() {
     <div className="flex justify-center p-8">
       <div className="w-full sm:max-w-sm space-y-8">
         <h1 className="font-bold  text-4xl flex justify-center">
-          بروزرسانی اطلاعات
+          Update information
         </h1>
         <form className="space-y-8" onSubmit={handleSubmit(onSubmit)}>
           <TextField
             className="textfield__input"
-            label="نام و نام خانوادگی :"
+            label="Name and surname:"
             name="name"
             value={userInput}
             onChange={(e) => setUserInput(e.target.value)}
@@ -54,7 +53,7 @@ function EditProfile() {
             errors={errors}
           />
           <TextField
-            label="ایمیل"
+            label="Email"
             name="email"
             register={register}
             value={emailInput}
@@ -62,7 +61,7 @@ function EditProfile() {
             validationSchema={{
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "ایمیل نامعتبر است",
+                message: "Email is invalid",
               },
             }}
             errors={errors}
@@ -72,7 +71,7 @@ function EditProfile() {
               <Loading />
             ) : (
               <button type="submit" className="btn btn--primary w-full">
-                تایید
+                Submit
               </button>
             )}
           </div>

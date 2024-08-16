@@ -3,15 +3,15 @@ import { toNumbersWithComma } from "../../utils/formatNumber";
 
 const statusStyle = [
   {
-    label: "رد شده",
+    label: "rejected",
     className: "badge--danger",
   },
   {
-    label: "در انتظار تایید  ",
+    label: "Awaiting approval",
     className: "badge--secondary",
   },
   {
-    label: "تایید شده",
+    label: "approved",
     className: "badge--success",
   },
 ];
@@ -20,7 +20,7 @@ function ProposalsCards({ proposals }) {
   if (proposals.length == 0)
     return (
       <div className="flex justify-center">
-        <p className="font-bold text-secondery-800">هیچ درخواستی یافت نشد.</p>{" "}
+        <p className="font-bold text-secondery-800">No request found.</p>{" "}
       </div>
     );
   return (
@@ -37,20 +37,19 @@ function ProposalsCards({ proposals }) {
                   {proposal.description}
                 </span>
                 <span className="text-secondery-400 text-sm">
-                  بودجه پیشنهادی شما :{toNumbersWithComma(proposal.price)} تومان
+                  Your proposed budget:{toNumbersWithComma(proposal.price)}$
                 </span>
               </div>
               <div
                 className={`badge ${statusStyle[proposal.status].className} `}
               >
-                {" "}
                 {statusStyle[proposal.status].label}
               </div>
             </div>
             <span className="block w-full h-1 bg-secondery-200"></span>
             <div>
               <span className="text-secondery-400 text-sm">
-                زمان تحویل : {proposal.duration} روز
+                Delivery time: {proposal.duration} day
               </span>
             </div>
           </div>

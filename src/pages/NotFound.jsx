@@ -10,11 +10,11 @@ function NotFound() {
         <div className="sm:max-w-sm  pt-10">
           <div className="space-y-4">
             <h1 className=" font-bold text-xl">
-              صفحه ای که به دنبالش بودید، یافت نشد .
+              The page you were looking for was not found.
             </h1>
             <button onClick={moveBack} className="flex items-center gap-x-2">
               <HiArrowRight />
-              <span>برگشت</span>
+              <span>Back</span>
             </button>
           </div>
         </div>

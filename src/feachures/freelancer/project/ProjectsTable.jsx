@@ -4,7 +4,6 @@ import Loading from "../../../ui/Loading";
 import Empty from "../../../ui/Empty";
 import useProjects from "../../../hooks/useProjects";
 import ProjectRow from "./ProjectRow";
-import ProjectHeader from "../../projects/ProjectHeader";
 
 export default function ProjectsTable() {
   const { isLoading, projects } = useProjects();
@@ -19,8 +18,7 @@ export default function ProjectsTable() {
   if (!projects.length) {
     return (
       <div>
-        <Empty resourceName="هیچ پروژه ای یافت نشد" />
-        <ProjectHeader />
+        <Empty resourceName="No project found" />
       </div>
     );
   }

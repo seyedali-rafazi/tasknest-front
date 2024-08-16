@@ -23,7 +23,7 @@ function ProjectCard({ project }) {
   return (
     <div
       key={project._id}
-      className="flex w-3xl flex-col justify-center border rounded-lg shadow-sm py-4 px-3 "
+      className="flex w-3xl flex-col justify-center border border-secondery-300 rounded-lg shadow-sm py-4 px-3 "
     >
       <div className="flex felx-col flex-wrap gap-5">
         <div className="flex gap-2 items-center w-full justify-between">

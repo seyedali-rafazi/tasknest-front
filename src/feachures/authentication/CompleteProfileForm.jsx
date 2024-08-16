@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import TextField from "../../ui/TextField";
-import RadioInput from "../../ui/RadioInput";
 import { useMutation } from "@tanstack/react-query";
 import { completeProfile } from "../../services/authService";
 import Loading from "../../ui/Loading";
@@ -35,7 +34,7 @@ function CompleteProfileForm() {
       toast.success(message);
       if (user.status !== 2) {
         navigate("/");
-        toast("پروفایل شما در انتظار تایید است.", { icon: "👏" });
+        toast("Your profile is awaiting approval.", { icon: "👏" });
         return;
       }
       if (user.role == "OWNER") {
@@ -49,32 +48,32 @@ function CompleteProfileForm() {
     }
   };
   return (
-    <div className="flex min-h-screen justify-center items-center p-8">
-      <div className="w-full sm:max-w-sm space-y-8">
-        <h1 className="font-bold  text-4xl flex justify-center">
-          تکمیل اطلاعات
+    <div className="flex min-h-screen justify-center items-center p-8 w-full">
+      <div className="w-full max-w-md space-y-8">
+        <h1 className="font-bold  text-xl sm:text-2xl flex justify-center w-full">
+          Completion of information
         </h1>
         <form className="space-y-8" onSubmit={handleSubmit(onSubmit)}>
           <TextField
             className="textfield__input"
-            label="نام و نام خانوادگی :"
+            label="Name and surname:"
             name="name"
             register={register}
             validationSchema={{
-              required: "نام و نام خانوادگی ضروری است",
+              required: "Name and surname are required",
             }}
             errors={errors}
           />
           <TextField
             className="textfield__input"
-            label="ایمیل"
+            label="Email"
             name="email"
             register={register}
             validationSchema={{
-              required: "ایمیل ضروری است",
+              required: "Email is required",
               pattern: {
                 value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "ایمیل نامعتبر است",
+                message: "Email is invalid",
               },
             }}
             errors={errors}
@@ -86,16 +85,16 @@ function CompleteProfileForm() {
             config={{
               name: "role",
               validationSchema: {
-                required: "ایمیل ضروری است",
+                required: "Email is required",
               },
               options: [
                 {
                   value: "OWNER",
-                  label: "کارفرما",
+                  label: "Owner",
                 },
                 {
                   value: "FREELANCER",
-                  label: "فریلنسر",
+                  label: "Freelancer",
                 },
               ],
             }}
@@ -105,7 +104,7 @@ function CompleteProfileForm() {
               <Loading />
             ) : (
               <button type="submit" className="btn btn--primary w-full">
-                تایید
+                Submit
               </button>
             )}
           </div>

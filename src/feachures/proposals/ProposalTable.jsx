@@ -13,16 +13,16 @@ function ProposalTable() {
   }
 
   if (!proposals.length) {
-    return <Empty resourceName="هیچ درخواستی یافت نشد" />;
+    return <Empty resourceName="No request found" />;
   }
   return (
     <Table>
       <Table.Header>
         <th>#</th>
-        <th>توضیحات</th>
-        <th>زمان تحویل</th>
-        <th>هزینه</th>
-        <th>وضعیت</th>
+        <th>Description</th>
+        <th>Delivery Time</th>
+        <th>Cost</th>
+        <th>Status</th>
       </Table.Header>
       <Table.Body>
         {proposals.map((proposal, index) => (

@@ -7,15 +7,15 @@ import { useQueryClient } from "@tanstack/react-query";
 
 const options = [
   {
-    label: "رد شده",
+    label: "Rejected",
     value: "0",
   },
   {
-    label: "در انتظار تایید",
+    label: "Awaiting approval",
     value: "1",
   },
   {
-    label: "تایید شده",
+    label: "Approved",
     value: "2",
   },
 ];
@@ -26,7 +26,6 @@ function ChangeUserStatus({ userId, onClose }) {
   const queryClient = useQueryClient();
 
   const onSubmit = (data) => {
-
     changeUserStatus(
       { userId, data },
       {
@@ -43,7 +42,7 @@ function ChangeUserStatus({ userId, onClose }) {
       <form onSubmit={handleSubmit(onSubmit)}>
         <RHFSelect
           name="status"
-          label="تغییر وضعبت درخواست"
+          label="Change request status"
           register={register}
           required
           options={options}
@@ -53,7 +52,7 @@ function ChangeUserStatus({ userId, onClose }) {
             <Loading />
           ) : (
             <button type="submit" className="btn btn--primary w-full">
-              تایید
+              Submit
             </button>
           )}
         </div>
