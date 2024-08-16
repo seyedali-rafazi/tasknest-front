@@ -16,31 +16,31 @@ function AccounDropDown({ open, onClose, user }) {
   let projectsPage;
   switch (user.role) {
     case "USER":
-      userRole = "کاربر";
+      userRole = "User";
       accountPath = "/";
       proposalPath = "/";
       projectsPage = "/recomended-projects";
       break;
     case "ADMIN":
-      userRole = "ادمین";
+      userRole = "Admin";
       accountPath = "/admin";
       proposalPath = "freelancer/proposals";
       projectsPage = "/recomended-projects";
       break;
     case "FREELANCER":
-      userRole = "کارجو";
+      userRole = "Freelancer";
       accountPath = "/freelancer";
       proposalPath = "/freelancer/proposals";
       projectsPage = "/recomended-projects";
       break;
     case "OWNER":
-      userRole = "کارفرما";
+      userRole = "Owner";
       accountPath = "/owner";
       proposalPath = "/owner/projects";
       projectsPage = "/order-project";
       break;
     default:
-      userRole = "نامشخص";
+      userRole = "Unknown";
       accountPath = "/";
       proposalPath = "/";
       projectsPage = "/recomended-projects";
@@ -49,7 +49,9 @@ function AccounDropDown({ open, onClose, user }) {
 
   const handelClick = () => {
     if ((user.role = "USER" && user.status == 1)) {
-      toast.error("اکانت شما هنوز فعال نشده است از صبر شما ممنون هستیم");
+      toast.error(
+        "Your account has not been activated yet. Thank you for your patience."
+      );
     }
   };
 
@@ -59,16 +61,17 @@ function AccounDropDown({ open, onClose, user }) {
 
   return (
     open && (
-      <div className="fixed top-0 left-0 w-full h-screen  bg-opacity-30 z-50">
+      <div className="fixed top-0 right-0 w-full h-screen  bg-opacity-30 z-50">
         <ul
-          className="left-4 top-16 bg-secondery-0 py-2 px-2 z-1200 fixed flex flex-col gap-3 shadow-md
+          className="right-4 top-16 bg-secondery-0 py-2 px-2 z-1200 fixed flex flex-col gap-3 shadow-md
         shadow-primary-700 rounded-md w-64 transition-all duration-300 ease-in-out "
-          ref={modalRef}>
+          ref={modalRef}
+        >
           <li className="flex px-4  gap-3 items-center ">
             <img
               className="w-10 h-10 rounded-full object-cover object-center"
               src="/user.jpg"
-              alt="عکس کاربر"
+              alt="user"
             />
             <div>
               <p className="font-bold text-secondery-900"> {user.name}</p>
@@ -86,18 +89,18 @@ function AccounDropDown({ open, onClose, user }) {
             path={accountPath}
             onClick={handelClick}
             icon={<TbHome className="w-6 h-6" />}
-            text="حساب کاربری"
+            text="User Profile"
           />
           <DropDownButton
             path={proposalPath}
             onClick={handelClick}
             icon={<TbReportSearch className="w-6 h-6" />}
-            text="درخواست های شما "
+            text="Your Requests"
           />
           <DropDownButton
             path={projectsPage}
             icon={<TbPaperclip className="w-6 h-6" />}
-            text="پروژه های موجود"
+            text="Available Projects"
           />
 
           <Logout />
@@ -118,7 +121,7 @@ function DropDownButton({ path, onClick, icon, text }) {
           hover:bg-primary-700 py-3 rounded-lg transition-all duration-300 text-secondery-900
           `}>
         {icon}
-        <span>{text} </span>
+        <span className="font-bold">{text} </span>
       </button>
     </Link>
   );

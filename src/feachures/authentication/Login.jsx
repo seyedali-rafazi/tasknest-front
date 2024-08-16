@@ -11,9 +11,10 @@ function Login() {
     <div>
       <button
         onClick={handelClick}
-        className="flex items-center gap-3 rounded-lg py-1 px-2.5 bg-primary-800 hover:bg-primary-600 hover:shadow-md transition-all duration-300">
-        <span className="text-white">ورود | ثبت نام</span>
+        className="flex items-center gap-3 rounded-lg py-1 px-2.5 bg-primary-800 hover:bg-primary-600 hover:shadow-md transition-all duration-300"
+      >
         <HiArrowRightOnRectangle className="icon  text-white" />
+        <span className="text-white font-bold">Login</span>
       </button>
     </div>
   );

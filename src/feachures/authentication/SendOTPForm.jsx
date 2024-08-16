@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import TextField from "../../ui/TextField";
 import Loading from "../../ui/Loading";
 import { useForm } from "react-hook-form";
@@ -12,7 +11,6 @@ function SendOTPForm() {
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm();
   const onCkickSubmit = async (data) => {
@@ -21,7 +19,7 @@ function SendOTPForm() {
       if (!user.isActive) return navigate("/complete-profile");
       if (Number(user.status) !== 2) {
         navigate("/");
-        toast("پروفایل شما در انتظار تایید است", { icon: "👏" });
+        toast("Your profile is awaiting approval", { icon: "👏" });
         return;
       }
       if (user.role === "OWNER") return navigate("/");
@@ -34,7 +32,7 @@ function SendOTPForm() {
   return (
     <div className="flex flex-col gap-7 justify-center items-center min-h-screen ">
       <h2 className="font-bold text-xl sm:text-3xl text-primary-900 text-center">
-        ورود به تخصص سازان
+        Login to TaskNest
       </h2>
       <form
         className="w-full max-w-96 flex justify-center items-center flex-col space-y-8"
@@ -42,24 +40,24 @@ function SendOTPForm() {
       >
         <TextField
           className="w-full min-h-12 p-2"
-          placeholder="شماره تلفن:"
+          placeholder="Phone number:"
           errors={errors}
           name="phoneNumber"
           type="number"
           register={register}
           validationSchema={{
-            required: "تلفن همراه ضروری است",
+            required: "Phone Number is required",
           }}
         />
         <TextField
           className="w-full min-h-12 p-2"
-          placeholder=" رمز عبور:"
+          placeholder="Password:"
           errors={errors}
           name="password"
-          type="فثطف"
+          type="text"
           register={register}
           validationSchema={{
-            required: "رمزعبور همراه ضروری است",
+            required: "Password is required",
           }}
         />
         <div className="w-full">
@@ -67,7 +65,7 @@ function SendOTPForm() {
             <Loading />
           ) : (
             <button type="submit" className="btn btn--primary  w-full ">
-              ثبت نام / ورود
+              Registration / Login
             </button>
           )}
         </div>

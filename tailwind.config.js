@@ -50,7 +50,7 @@ export default {
         padding: "1rem",
       },
       fontFamily: {
-        sans: ["Vazir", ...fontFamily.sans],
+        sans: ["PlayfairDisplay", ...fontFamily.sans],
       },
     },
   },

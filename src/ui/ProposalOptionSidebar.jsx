@@ -3,30 +3,30 @@ import FilterDropdown from "./FilterDropdown";
 
 const statusOptions = [
   {
-    label: "تمام درخواست ها ",
+    label: "All Requests",
     value: "ALL",
   },
   {
-    label: "رد شده",
+    label: "rejected",
     value: 0,
   },
   {
-    label: "در انتظار تایید",
+    label: "Awaiting approval",
     value: 1,
   },
   {
-    label: "تایید شده",
+    label: "approved",
     value: 2,
   },
 ];
 
 const sortOptions = [
   {
-    label: "دسته بندی (جدیدترین)",
+    label: "category (latest)",
     value: "latest",
   },
   {
-    label: "دسته بندی (قدیمی ترین)",
+    label: "category (oldest)",
     value: "earliest",
   },
 ];

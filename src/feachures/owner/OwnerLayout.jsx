@@ -10,11 +10,11 @@ function OwnerLayout() {
       <SideBar>
         <CustomeNavlink path="dashboard">
           <HiHome />
-          <span>داشبورد</span>
+          <span>Dashboard</span>
         </CustomeNavlink>
         <CustomeNavlink path="projects">
           <HiCollection />
-          <span>پروژه ها</span>
+          <span>Projects</span>
         </CustomeNavlink>
       </SideBar>
     </AppLayout>

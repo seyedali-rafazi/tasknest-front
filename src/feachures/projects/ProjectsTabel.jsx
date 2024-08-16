@@ -1,11 +1,7 @@
-import React, { useState } from "react";
 import useOwnerProjects from "./useOwnerProjects";
 import Loading from "../../ui/Loading";
 import Table from "../../ui/Table";
 import ProjectRow from "./ProjectRow";
-import { HiPlus } from "react-icons/hi";
-import Modal from "../../ui/Modal";
-import CreateProjectForm from "./CreateProjectForm";
 import ProjectHeader from "./ProjectHeader";
 import Empty from "../../ui/Empty";
 function ProjectsTabel() {
@@ -21,7 +17,7 @@ function ProjectsTabel() {
   if (!projects.length) {
     return (
       <div>
-        <Empty resourceName="هیچ پروژه ای یافت نشد" />
+        <Empty resourceName="No project found" />
         <ProjectHeader />
       </div>
     );
@@ -32,15 +28,15 @@ function ProjectsTabel() {
       <Table>
         <Table.Header>
           <th>#</th>
-          <th>عنوان پروژه</th>
-          <th>دسته بندی پروژه</th>
-          <th>بودجه</th>
-          <th>ددلاین</th>
-          <th>تگ ها</th>
-          <th>فریلنسر</th>
-          <th>وضعیت پروژه</th>
-          <th>عملیات</th>
-          <th> درخواست ها</th>
+          <th>Project title</th>
+          <th>Project category</th>
+          <th>Budget</th>
+          <th>Deadline</th>
+          <th>tags</th>
+          <th>Freelancer</th>
+          <th>Project status</th>
+          <th>Operation</th>
+          <th> Requests</th>
         </Table.Header>
         <Table.Body>
           {projects.map((project, index) => (

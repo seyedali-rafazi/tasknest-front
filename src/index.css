@@ -154,7 +154,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: "Vazir";
+  font-family: "PlayfairDisplay";
   min-height: 100vh;
   user-select: none;
   background-color: rgb(var(--background-app-rgb));
@@ -223,11 +223,3 @@ table td {
   color: rgb(var(--color-secondary-600));
 }
 
-.navbar {
-  transition: transform 0.3s ease-in-out;
-  transform: translateX(100%); /* Initially hide the navbar */
-}
-
-.navbar.open {
-  transform: translateX(0); /* Slide in the navbar */
-}

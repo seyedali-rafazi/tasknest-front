@@ -28,11 +28,11 @@ export default function ProjectsTable() {
     <Table>
       <Table.Header>
         <th>#</th>
-        <th>عنوان پروژه</th>
-        <th>بودجه</th>
-        <th>ددلاین</th>
-        <th>وضعیت پروژه</th>
-        <th>عملیات</th>
+        <th>Project title</th>
+        <th>Budget</th>
+        <th>Deadline</th>
+        <th>Project status</th>
+        <th>Operation</th>
       </Table.Header>
       <Table.Body>
         {projects.map((project, index) => (

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Table from "../../../ui/Table";
-import { toPersianNumbersWithComma } from "../../../utils/formatNumber";
+import { toNumbersWithComma } from "../../../utils/formatNumber";
 import toLocalDateShort from "../../../utils/toLocalDateShort";
 import { truncateText } from "../../../utils/truncateText";
 import { MdAssignment } from "react-icons/md";
@@ -25,7 +25,7 @@ function ProjectRow({ project, index }) {
     <Table.Row>
       <td>{index + 1}</td>
       <td>{truncateText(title, 30)}</td>
-      <td>{toPersianNumbersWithComma(budget)}</td>
+      <td>{toNumbersWithComma(budget)}</td>
       <td>{toLocalDateShort(deadline)}</td>
       <td>
         <span className={`badge ${projectStatus[status].className} `}>
@@ -36,7 +36,8 @@ function ProjectRow({ project, index }) {
         <Modal
           open={open}
           onClose={() => setOpen(false)}
-          title={`درخواست انجام پروژه ${title}`}>
+          title={`درخواست انجام پروژه ${title}`}
+        >
           <CreateProposal
             projectId={project._id}
             onClose={() => setOpen(false)}

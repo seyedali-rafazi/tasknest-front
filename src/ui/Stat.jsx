@@ -1,5 +1,4 @@
 import React from "react";
-import { toPersianNumbers } from "../utils/formatNumber";
 
 const colors = {
   primary: "bg-primary-100 text-primary-700",
@@ -17,7 +16,7 @@ function Stat({ icon, value, title, color }) {
         {title}
       </h5>
       <p className="text-3xl font-bold text-secondery-900">
-        {toPersianNumbers(value)}
+        {value}
       </p>
     </div>
   );

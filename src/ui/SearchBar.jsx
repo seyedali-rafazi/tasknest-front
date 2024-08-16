@@ -8,8 +8,8 @@ import {
 
 function SearchBar() {
   const [searchParams, setSearchParams] = useSearchParams();
-  const [search, setSearchValue] = useState(searchParams.get("search") || "");
-  const [category, setCat] = useState("");
+  const [search, setSearch] = useState(searchParams.get("search") || "");
+  const [category, setCategory] = useState("");
   const navigate = useNavigate();
   const { transformedCategories } = useCategories();
 
@@ -44,14 +44,15 @@ function SearchBar() {
       <form className="my-4 space-y-4 grid grid-cols-1 lg:grid-cols-3 gap-4 content-center justify-center">
         <input
           value={search}
-          onChange={(e) => setSearchValue(e.target.value)}
-          placeholder="حمل و نقل ریلی ..."
+          onChange={(e) => setSearch(e.target.value)}
+          placeholder="Front-end project ..."
           className="border border-secondery-100 rounded-lg h-14 mt-4 p-3"
         />
         <select
-          onChange={(e) => setCat(e.target.value)}
-          className="textfield__input">
-          <option value="ALL">تمام دسته بندی ها</option>
+          onChange={(e) => setCategory(e.target.value)}
+          className="textfield__input"
+        >
+          <option value="ALL">All Categories</option>
           {transformedCategories.map((option) => (
             <option key={option.value} value={option.value}>
               {option.label}
@@ -60,8 +61,9 @@ function SearchBar() {
         </select>
         <button
           onClick={handelClick}
-          className="bg-primary-700 text-white py-3 px-3 w-full rounded-xl">
-          جستو و جو
+          className="bg-primary-700 text-white py-3 px-3 w-full rounded-xl"
+        >
+          Search
         </button>
       </form>
     </div>

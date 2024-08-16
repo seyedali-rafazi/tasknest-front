@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { toPersianNumbersWithComma } from "../utils/formatNumber";
 import toLocalDateShort from "../utils/toLocalDateShort";
 import AddtoFavourit from "./AddtoFavourit";
 import Modal from "./Modal";
 import CreateProposal from "../feachures/freelancer/project/CreateProposal";
 import useUser from "../feachures/authentication/useUser";
 import toast from "react-hot-toast";
+import { toNumbersWithComma } from "../utils/formatNumber";
 
 function ProjectCard({ project }) {
   const { user } = useUser();
@@ -17,7 +17,7 @@ function ProjectCard({ project }) {
         setOpen(true);
       }
     } else {
-      toast.error("برای ارسال درخواست باید وارد سایت بشوید");
+      toast.error("You must log in to submit a request");
     }
   };
   return (
@@ -40,10 +40,10 @@ function ProjectCard({ project }) {
                 {project.title}
               </h2>
               <span className="block w-full text-secondery-400 text-sm">
-                دسته {project.category.title}
+                Category : {project.category.title}
               </span>
               <span className="block w-full text-secondery-400 text-sm">
-                بودجه : {toPersianNumbersWithComma(project.budget)} تومان
+                Budget : {toNumbersWithComma(project.budget)} $
               </span>
             </div>
           </div>
@@ -59,7 +59,7 @@ function ProjectCard({ project }) {
           <Modal
             open={open}
             onClose={() => setOpen(false)}
-            title={`درخواست انجام پروژه ${project.category.title}`}
+            title={`Request to do the project${project.category.title}`}
           >
             <CreateProposal
               projectId={project._id}
@@ -70,7 +70,7 @@ function ProjectCard({ project }) {
             onClick={handelOpenProject}
             className="bg-primary-900 text-secondery-0 py-2 px-3 rounded-xl hover:bg-primary-800 transition-all duration-300"
           >
-            ارسال درخواست
+            Submit request
           </button>
         </div>
       </div>

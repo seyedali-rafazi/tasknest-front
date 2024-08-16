@@ -9,7 +9,7 @@ function HomeHeader() {
         <ul className="flex gap-x-6 items-center justify-between  p-4">
           <div>
             <h1 className="text-primary-600 font-extrabold text-xl md:text-3xl">
-              تخصص سازان
+              TaskNest
             </h1>
           </div>
           <div className="flex gap-x-6 items-center">

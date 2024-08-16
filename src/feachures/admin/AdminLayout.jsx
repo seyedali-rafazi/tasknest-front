@@ -15,19 +15,19 @@ function AdminLayout() {
       <SideBar>
         <CustomeNavlink path="dashboard">
           <HiHome />
-          <span>داشبورد</span>
+          <span>Dashboard</span>
         </CustomeNavlink>
         <CustomeNavlink path="users">
           <HiUser />
-          <span>کاربران</span>
+          <span>Users</span>
         </CustomeNavlink>
         <CustomeNavlink path="projects">
           <HiCollection />
-          <span>پروژه ها</span>
+          <span>Projects</span>
         </CustomeNavlink>
         <CustomeNavlink path="proposals">
           <HiOutlineViewGrid />
-          <span>درخواست ها</span>
+          <span>Requests</span>
         </CustomeNavlink>
       </SideBar>
     </AppLayout>

@@ -1,8 +1,7 @@
 import React from "react";
 import Table from "../../ui/Table";
 import {
-  toPersianNumbers,
-  toPersianNumbersWithComma,
+  toNumbersWithComma,
 } from "../../utils/formatNumber";
 import { truncateText } from "../../utils/truncateText";
 
@@ -27,8 +26,8 @@ function ProposalRow({ proposal, index }) {
     <Table.Row>
       <td>{index + 1}</td>
       <td>{truncateText(description, 60)}</td>
-      <td>{toPersianNumbers(duration)} روز</td>
-      <td>{toPersianNumbersWithComma(price)}</td>
+      <td>{duration} روز</td>
+      <td>{toNumbersWithComma(price)}</td>
       <td>
         {" "}
         <span className={`badge ${statusStyle[status].className} `}>

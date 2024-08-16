@@ -18,19 +18,19 @@ function Stats({ projects }) {
     <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-x-8 gap-y-8">
       <Stat
         color="primary"
-        title="پروژه ها"
+        title="Projects"
         value={numOfProjects}
         icon={<HiOutlineViewGrid className="w-20 h-20" />}
       />
       <Stat
         color="green"
-        title="پروژه های واگذار شده"
+        title="Approved Projects"
         value={numOfAcceptedProjects}
         icon={<HiCurrencyDollar className="w-20 h-20" />}
       />
       <Stat
         color="yellow"
-        title="درخواست ها"
+        title="Requests"
         value={numOfProposal}
         icon={<HiCollection className="w-20 h-20" />}
       />

@@ -1,5 +1,5 @@
 import React from "react";
-import { toPersianNumbersWithComma } from "../../utils/formatNumber";
+import { toNumbersWithComma } from "../../utils/formatNumber";
 
 const statusStyle = [
   {
@@ -28,7 +28,8 @@ function ProposalsCards({ proposals }) {
       {proposals.map((proposal) => (
         <div
           key={proposal._id}
-          className="mb-10 border border-secondery-200 rounded-lg p-5 ">
+          className="mb-10 border border-secondery-200 rounded-lg p-5 "
+        >
           <div className="flex flex-col gap-4">
             <div className="flex items-center justify-between">
               <div className="flex flex-col gap-2">
@@ -36,12 +37,12 @@ function ProposalsCards({ proposals }) {
                   {proposal.description}
                 </span>
                 <span className="text-secondery-400 text-sm">
-                  بودجه پیشنهادی شما :
-                  {toPersianNumbersWithComma(proposal.price)} تومان
+                  بودجه پیشنهادی شما :{toNumbersWithComma(proposal.price)} تومان
                 </span>
               </div>
               <div
-                className={`badge ${statusStyle[proposal.status].className} `}>
+                className={`badge ${statusStyle[proposal.status].className} `}
+              >
                 {" "}
                 {statusStyle[proposal.status].label}
               </div>

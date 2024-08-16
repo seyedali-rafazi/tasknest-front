@@ -10,15 +10,15 @@ function FreelancerLauout() {
       <SideBar>
         <CustomeNavlink path="dashboard">
           <HiHome />
-          <span>داشبورد</span>
+          <span>Dashboard</span>
         </CustomeNavlink>
         <CustomeNavlink path="projects">
           <HiCollection />
-          <span>پروژه ها</span>
+          <span>Projects</span>
         </CustomeNavlink>
         <CustomeNavlink path="proposals">
           <HiCollection />
-          <span>درخواست ها</span>
+          <span>Requests</span>
         </CustomeNavlink>
       </SideBar>
     </AppLayout>

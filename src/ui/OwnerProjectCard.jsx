@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { toPersianNumbersWithComma } from "../utils/formatNumber";
+import { toNumbersWithComma } from "../utils/formatNumber";
 import toLocalDateShort from "../utils/toLocalDateShort";
 import Modal from "./Modal";
 import SendedPropopsal from "../feachures/order-projects/SendedPropopsal";
@@ -12,7 +12,8 @@ function OwnerProjectCard({ project }) {
   return (
     <div
       key={project._id}
-      className="flex w-3xl flex-col justify-center border rounded-lg shadow-sm py-4 px-3 ">
+      className="flex w-3xl flex-col justify-center border rounded-lg shadow-sm py-4 px-3 "
+    >
       <div className="flex felx-col flex-wrap gap-5">
         <div className="flex gap-2 items-center w-full justify-between">
           <div className="flex gap-1 items-center">
@@ -28,10 +29,10 @@ function OwnerProjectCard({ project }) {
                 {project.title}
               </h2>
               <span className="block w-full text-secondery-400 text-sm">
-                دسته {project.category.title}
+                Category {project.category.title}
               </span>
               <span className="block w-full text-secondery-400 text-sm">
-                بودجه : {toPersianNumbersWithComma(project.budget)} تومان
+                Budget : {toNumbersWithComma(project.budget)} $
               </span>
             </div>
           </div>
@@ -45,13 +46,15 @@ function OwnerProjectCard({ project }) {
           </p>
           <button
             onClick={() => navigate(`/owner/projects/${project._id}`)}
-            className="bg-primary-900 text-secondery-0 py-2 px-3 rounded-xl hover:bg-primary-800 transition-all duration-300">
-            درخواست های ارسال شده
+            className="bg-primary-900 text-secondery-0 py-2 px-3 rounded-xl hover:bg-primary-800 transition-all duration-300"
+          >
+            Sent Requests
           </button>
           <Modal
-            title="درخواست های ارسال شده "
+            title="Sent Requests"
             open={open}
-            onClose={() => setOpen(false)}>
+            onClose={() => setOpen(false)}
+          >
             <SendedPropopsal onClose={() => setOpen(false)} />
           </Modal>
         </div>

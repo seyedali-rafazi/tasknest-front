@@ -77,65 +77,65 @@ function CreateProjectForm({ onClose, projectToEdit = {} }) {
       >
         <TextField
           className="textfield__input"
-          label="عنوان"
+          label="Title"
           name="title"
           register={register}
           required
           validationSchema={{
-            required: "عنوان ضروری است",
+            required: "Title is required",
             minLength: {
               value: 10,
-              message: "حداقل 10 کاراکتر را وارد کنید",
+              message: "At least enter 10 charecter",
             },
           }}
           errors={errors}
         />
         <TextField
           className="textfield__input"
-          label="توضیحات"
+          label="Description"
           name="description"
           register={register}
           required
           validationSchema={{
-            required: "نوضیحات ضروری است",
+            required: "Description is required",
             minLength: {
-              value: 30,
-              message: " عنوان باید حداقل ۳۰ کاراکتر باشد ",
+              value: 20,
+              message: "At least enter 20 charecter",
             },
           }}
           errors={errors}
         />
         <TextField
           className="textfield__input"
-          label="بودجه پروژه"
+          label="Budget"
           name="budget"
           type="number"
           register={register}
           required
           validationSchema={{
-            required: " بودجه ضروری است ",
+            required: "Budget is required",
           }}
           errors={errors}
         />
         <RHFSelect
           register={register}
-          label="دسته بندی"
+          label="Category"
           name="category"
           errors={errors}
           required
           options={categories}
         />
         <div>
-          <label className="mb-2 block text-secondery-700">تگ</label>
+          <label className="mb-2 block text-secondery-700">Tags</label>
           <TagsInput value={tags} onChange={setTags} name="tags" />
         </div>
-        <DatePickerField date={date} setDate={setDate} label="ددلاین" />
+        <DatePickerField date={date} setDate={setDate} label="Deadline" />
         <div className="!mt-8">
           {isCreating || isEditing ? (
             <Loading />
           ) : (
             <button type="submit" className="btn btn--primary w-full ">
-              تایید
+              Submit
             </button>
           )}
         </div>

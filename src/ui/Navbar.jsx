@@ -5,7 +5,7 @@ import { HiOutlineX } from "react-icons/hi";
 function Navbar({ open, onClose, children }) {
   const modalRef = useOutsideClick(onClose);
 
-  // Add a class to the body when the modal is open to prevent scrolling
+  // Add or remove class to prevent body scroll when the navbar is open
   useEffect(() => {
     if (open) {
       document.body.classList.add("overflow-hidden");
@@ -16,18 +16,19 @@ function Navbar({ open, onClose, children }) {
 
   return (
     <div
-      className={`${
+      className={`fixed inset-0 z-50 transition-opacity duration-300 ${
         open
-          ? "lg:hidden backdrop-blur-sm fixed top-0 left-0 right-0 bottom-0 w-full h-screen bg-secondery-800 bg-opacity-30 z-50 "
-          : ""
-      }`}>
+          ? "opacity-100 backdrop-blur-sm pointer-events-auto"
+          : "opacity-0 pointer-events-none"
+      }`}
+    >
       <div
-        className={`backdrop-blur-sm max-w-sm fixed top-0 left-0 right-0 bottom-0 w-4/6 h-screen bg-secondery-800 bg-opacity-30 z-50 navbar
-  ${open ? "open" : ""}`}>
-        <div
-          ref={modalRef}
-          className="bg-white h-screen w-full">
-          <div className="flex justify-end p-5 bg-secondery-0 ">
+        className={`fixed inset-y-0 left-0 max-w-sm w-4/6 h-screen bg-secondery-800 bg-opacity-30 transition-transform duration-600 transform ${
+          open ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        <div ref={modalRef} className="bg-white h-screen w-full">
+          <div className="flex justify-end p-5 bg-secondery-0">
             <button onClick={onClose}>
               <HiOutlineX className="w-6 h-6 text-secondery-900" />
             </button>

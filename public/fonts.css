@@ -1,20 +1,34 @@
 @font-face {
-  font-family: "Vazir";
-  font-style: normal;
+  font-family: "PlayfairDisplay";
+  src: url("../fonts/PlayfairDisplay-Regular.ttf") format("truetype");
   font-weight: 400;
-  src: url("/fonts/Vazirmatn-Regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "Vazir";
-  font-style: normal;
+  font-family: "PlayfairDisplay";
+  src: url("../fonts/PlayfairDisplay-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("../fonts/PlayfairDisplay-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("../fonts/PlayfairDisplay-Bold.ttf") format("truetype");
   font-weight: 700;
-  src: url("/fonts/Vazirmatn-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("../fonts/PlayfairDisplay-ExtraBold.ttf") format("truetype");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "PlayfairDisplay";
+  src: url("../fonts/PlayfairDisplay-Black.ttf") format("truetype");
+  font-weight: 900;
 }
 
-@font-face {
-  font-family: "Vazir";
-  font-style: normal;
-  font-weight: 900;
-  src: url("/fonts//Vazirmatn-Black.woff2") format("woff2");
-}

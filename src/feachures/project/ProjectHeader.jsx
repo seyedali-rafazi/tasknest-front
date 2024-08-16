@@ -10,7 +10,7 @@ function ProjectHeader({ project }) {
         <HiArrowRight className="icon text-secondery-500" />
       </button>
       <h1 className="font-black text-secondery-700 text-xl">
-        لیست درخواست های {project.title}
+        List of requests{project.title}
       </h1>
     </div>
   );

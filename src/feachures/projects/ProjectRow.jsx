@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Table from "../../ui/Table";
-import { toPersianNumbersWithComma } from "../../utils/formatNumber";
+import { toNumbersWithComma } from "../../utils/formatNumber";
 import toLocalDateShort from "../../utils/toLocalDateShort";
 import { truncateText } from "../../utils/truncateText";
 import { HiEye, HiOutlineTrash } from "react-icons/hi";
@@ -21,7 +21,7 @@ function ProjectRow({ project, index }) {
       <td>{index + 1}</td>
       <td>{truncateText(project.title, 30)}</td>
       <td>{project.category.title}</td>
-      <td>{toPersianNumbersWithComma(project.budget)}</td>
+      <td>{toNumbersWithComma(project.budget)}</td>
       <td>{toLocalDateShort(project.deadline)}</td>
       <td>
         <div className="flex flex-wrap items-center max-w-[200px]">
@@ -43,7 +43,8 @@ function ProjectRow({ project, index }) {
         <Modal
           title={`ویرایش ${project.title}`}
           open={isEditOpen}
-          onClose={() => setIsEditOpen(false)}>
+          onClose={() => setIsEditOpen(false)}
+        >
           <CreateProjectForm
             projectToEdit={project}
             onClose={() => setIsEditOpen(false)}
@@ -55,7 +56,8 @@ function ProjectRow({ project, index }) {
         <Modal
           title={`حذف ${project.title}`}
           open={isDeleteOpen}
-          onClose={() => setIsDeleteOpen(false)}>
+          onClose={() => setIsDeleteOpen(false)}
+        >
           <ConfirmDelete
             resurse={project.title}
             onClose={() => setIsDeleteOpen(false)}

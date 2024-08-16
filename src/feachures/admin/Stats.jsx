@@ -11,19 +11,19 @@ function Stats({ proposals, users, projects }) {
     <div className="grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-x-8 gap-y-8">
       <Stat
         color="green"
-        title="تعداد کاربران"
+        title="Number of users"
         value={numUsers}
         icon={<HiUser className="w-20 h-20" />}
       />
       <Stat
         color="primary"
-        title="درخواست ها"
+        title="Requests"
         value={numOfPropsals}
         icon={<HiOutlineViewGrid className="w-20 h-20" />}
       />
       <Stat
         color="yellow"
-        title=" تعداد پروژه ها "
+        title="Number of projects"
         value={numOfProjects}
         icon={<HiCollection className="w-20 h-20" />}
       />
