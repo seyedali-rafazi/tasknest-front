@@ -11,7 +11,6 @@ import Loading from "../../ui/Loading";
 function CheckOTPForm({
   phoneNumber,
   onBack,
-  onResendOtp,
   otpResponse,
   password,
 }) {
@@ -33,7 +32,7 @@ function CheckOTPForm({
       }
       if (user.status !== 2) {
         navigate("/");
-        toast("پروفایل شما در انتظار تایید است.", { icon: "👏" });
+        toast("Your profile is awaiting approval.", { icon: "👏" });
         return;
       }
       if (user.role == "ADMIN") {
@@ -59,7 +58,7 @@ function CheckOTPForm({
   }, [time]);
 
   const handelResendOtp = () => {
-    toast.error("این بخش هنوز غیر فعال است", {
+    toast.error("This section is still inactive", {
       duration: 6000,
     });
   };
@@ -80,18 +79,18 @@ function CheckOTPForm({
         )}
         <div className="mb-4 text-secondery-500">
           {time > 0 ? (
-            <p>{time} ثانیه تا ارسال مجدد کد</p>
+            <p>{time}Seconds to resend code</p>
           ) : (
             <button onClick={handelResendOtp}>ارسال مجدد کد</button>
           )}
         </div>
         <form className="space-y-10" onSubmit={checkOtpHandler}>
           <p className="font-bold text-secondery-400">
-            کد رو به رو را وارد کنید: {password}
+            Enter the following code: {password}
           </p>
           <div className="max-w-xs max-h-xs w-96 h-96">
             <img src="/check-otp.webp" alt="" />
-          </div>{" "}
+          </div>
           <OTPInput
             value={otp}
             onChange={setOtp}
@@ -110,9 +109,10 @@ function CheckOTPForm({
             {isPending ? (
               <Loading />
             ) : (
-              <button type="submit" className="btn btn--primary w-full">
-                تایید
-              </button>
+              <button
+                type="submit"
+                className="btn btn--primary w-full"
+              ></button>
             )}
           </div>
         </form>

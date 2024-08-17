@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import ProjectCard from "./ProjectCard";
 
 const listOrderSm = {
@@ -17,7 +16,7 @@ function ProjectCards({ projects, smOrder, mdOrder }) {
   if (projects.length == 0)
     return (
       <div className="flex justify-center">
-        <p className="font-bold text-secondery-800">هیچ پروژه ای یافت نشد.</p>{" "}
+        <p className="font-bold text-secondery-800"> No projects found.</p>{" "}
       </div>
     );
     

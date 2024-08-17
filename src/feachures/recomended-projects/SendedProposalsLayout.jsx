@@ -1,7 +1,6 @@
 import React from "react";
 import SidebarPages from "../../ui/SidebarPages";
 import Loading from "../../ui/Loading";
-
 import useProposals from "../proposals/useProposals";
 import ProposalsCards from "./ProposalsCards";
 import ProposalOptionSidebar from "../../ui/ProposalOptionSidebar";

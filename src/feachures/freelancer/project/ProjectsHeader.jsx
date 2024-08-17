@@ -5,11 +5,11 @@ import Filter from "../../../ui/Filter";
 
 const sortOptions = [
   {
-    label: "category (latest)",
+    label: "Category (latest)",
     value: "latest",
   },
   {
-    label: "category (oldest)",
+    label: "Category (oldest)",
     value: "earliest",
   },
 ];

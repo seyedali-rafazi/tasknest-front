@@ -5,15 +5,15 @@ import ChangeUserStatus from "./ChangeUserStatus";
 
 const userStatus = [
   {
-    label: "رد شده",
+    label: "Rejected",
     className: "badge--danger",
   },
   {
-    label: "در انتظار تایید",
+    label: "Awaiting approval",
     className: "badge--secondary",
   },
   {
-    label: "تایید شده",
+    label: "Approved",
     className: "badge--success",
   },
 ];

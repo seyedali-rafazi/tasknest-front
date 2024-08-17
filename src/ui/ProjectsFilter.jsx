@@ -3,11 +3,11 @@ import FilterDropdown from "./FilterDropdown";
 
 const sortOptions = [
   {
-    label: "category (latest)",
+    label: "Category (latest)",
     value: "latest",
   },
   {
-    label: "category (oldest)",
+    label: "Category (oldest)",
     value: "earliest",
   },
 ];

@@ -13,7 +13,7 @@ function ProtectedRoute({ children }) {
   useEffect(() => {
     if (!isAuthenticated && !isLoading) navigate("/auth");
     if (!isVerified && !isLoading) {
-      toast.error("پروفایل شما در انتظار تایید است.");
+      toast.error("Your profile is awaiting approval.");
       navigate("/");
     }
     if (!isAuthorized && !isLoading) navigate("/not-accessed");

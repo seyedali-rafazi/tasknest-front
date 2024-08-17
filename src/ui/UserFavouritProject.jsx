@@ -27,10 +27,10 @@ function UserFavouritProject({ myFavourit }) {
                 {myFavourit.title}
               </h2>
               <span className="block w-full text-secondery-400 text-sm">
-                دسته {myFavourit.category.title}
+                Category {myFavourit.category.title}
               </span>
               <span className="block w-full text-secondery-400 text-sm">
-                بودجه : {toNumbersWithComma(myFavourit.budget)} تومان
+                Budget : {toNumbersWithComma(myFavourit.budget)} $
               </span>
             </div>
           </div>
@@ -46,7 +46,7 @@ function UserFavouritProject({ myFavourit }) {
           <Modal
             open={open}
             onClose={() => setOpen(false)}
-            title={`درخواست انجام پروژه ${myFavourit.category.title}`}
+            title={`Request to do the project ${myFavourit.category.title}`}
           >
             <CreateProposal
               projectId={myFavourit._id}
@@ -57,7 +57,7 @@ function UserFavouritProject({ myFavourit }) {
             onClick={() => setOpen(true)}
             className="bg-primary-900 text-secondery-0 py-2 px-3 rounded-xl hover:bg-primary-800 transition-all duration-300"
           >
-            ارسال درخواست
+            Submit request
           </button>
         </div>
       </div>

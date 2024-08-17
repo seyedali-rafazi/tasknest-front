@@ -1,15 +1,14 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 
 const acoounts = [
   {
-    label: "کارفرما",
+    label: "Owner",
     value: "OWNER",
     phone: "09234949876",
     password: "787028",
   },
   {
-    label: "کارجو",
+    label: "Freelancer",
     value: "FREELANCER",
     phone: "09352587903",
     password: "180667",
@@ -25,9 +24,9 @@ function ChooseAcount({ setStep, setphoneNumber, setpassword }) {
   return (
     <div className="flex flex-col justify-evenly items-center  ">
       <p className="font-bold bg-primary-600 text-secondery-0 p-5 rounded-lg w-full md:w-2/3">
-        توجه : برای تست این وبسایت دو پنل برای شما در نظر گرفته شده است پنل
-        کارفرما برای ایجاد پروژه و پنل کارجو برای درخواست برای آن پروژه در نظر
-        گرفته شده است.
+        Note: To test this website, two panels have been considered for you The
+        employer to create the project and the jobseeker panel to apply for that
+        project has been taken
       </p>
       <div className="max-w-xs max-h-xs w-96 h-96">
         <img src="/Login-photo.webp" />
@@ -39,7 +38,8 @@ function ChooseAcount({ setStep, setphoneNumber, setpassword }) {
               <button
                 value={acoount.value}
                 onClick={() => handelClick(acoount.phone, acoount.password)}
-                className="btn btn--primary bg-primary-900 w-full mt-5 py-4 px-4 text-secondery-0 rounded-lg">
+                className="btn btn--primary bg-primary-900 w-full mt-5 py-4 px-4 text-secondery-0 rounded-lg"
+              >
                 {acoount.label}
               </button>
             </div>

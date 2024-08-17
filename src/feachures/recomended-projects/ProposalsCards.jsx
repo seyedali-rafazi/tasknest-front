@@ -3,7 +3,7 @@ import { toNumbersWithComma } from "../../utils/formatNumber";
 
 const statusStyle = [
   {
-    label: "rejected",
+    label: "Rejected",
     className: "badge--danger",
   },
   {
@@ -11,7 +11,7 @@ const statusStyle = [
     className: "badge--secondary",
   },
   {
-    label: "approved",
+    label: "Approved",
     className: "badge--success",
   },
 ];

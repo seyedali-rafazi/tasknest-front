@@ -7,7 +7,7 @@ const statusOptions = [
     value: "ALL",
   },
   {
-    label: "rejected",
+    label: "Rejected",
     value: 0,
   },
   {
@@ -15,18 +15,18 @@ const statusOptions = [
     value: 1,
   },
   {
-    label: "approved",
+    label: "Approved",
     value: 2,
   },
 ];
 
 const sortOptions = [
   {
-    label: "category (latest)",
+    label: "Category (latest)",
     value: "latest",
   },
   {
-    label: "category (oldest)",
+    label: "Category (oldest)",
     value: "earliest",
   },
 ];
