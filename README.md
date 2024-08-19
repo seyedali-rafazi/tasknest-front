@@ -1,5 +1,5 @@
 # Hire Freelancering Frontend App
-### See [Live](https://takhasossazan.liara.run/)
+### See [Live](https://tasknest-app.vercel.app/)
 
 
 This is the frontend application for the Hire Freelancering platform, built using React.js. The app provides a user-friendly interface for clients and freelancers to interact with the backend services, such as job postings, freelancer profiles, messaging, and more.
